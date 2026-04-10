@@ -1,6 +1,7 @@
-export const HemisphereDisplay = () => {
+import { useGeolocation } from '../hooks/useGeolocation';
 
-  const currentLocation = null;
+export const HemisphereDisplay = () => {
+  const currentLocation = useGeolocation();
 
   if (!currentLocation) {
     return <p>{'Sorry, location is currently unavailable'}</p>;
@@ -16,4 +17,4 @@ export const HemisphereDisplay = () => {
     : 'southern';
 
   return <p>You are in the {hemisphere} hemisphere.</p>;
-}
+};

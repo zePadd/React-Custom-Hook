@@ -1,5 +1,7 @@
+import { useGeolocation } from '../hooks/useGeolocation';
+
 export const LongitudeLatitudeDisplay = () => {
-  const currentLocation = null;
+  const currentLocation = useGeolocation();
 
   if (!currentLocation) {
     return <p>{'Sorry, location is currently unavailable'}</p>;
@@ -14,6 +16,4 @@ export const LongitudeLatitudeDisplay = () => {
       <p>{longitude}° {longitude > 0 ? 'E' : 'W'}</p>
     </section>
   );
-}
-
-
+};
